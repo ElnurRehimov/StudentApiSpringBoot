@@ -4,7 +4,6 @@ import az.ingress.ms6demo.dto.CreateStudentDto;
 import az.ingress.ms6demo.dto.StudentDto;
 import az.ingress.ms6demo.exceptions.StudentNotFound;
 import az.ingress.ms6demo.services.StudentService;
-import az.ingress.ms6demo.services.StudentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,7 @@ import javax.validation.Valid;
 public class StudentController {
     //@Autowired
     private final StudentService studentService;
+
     @GetMapping("/{id}")
     public ResponseEntity<StudentDto> get(@PathVariable Long id){
         log.trace("Get student by id {}",id);
